@@ -17,15 +17,15 @@ import tensorflow as tf
 
 IMAGE_SIZE = [299, 299]
 
-train_path = 'Datasets/Train'
-valid_path = 'Datasets/Test'
+train_path = './Datasets/Train'
+valid_path = './Datasets/Test'
 
 inception = InceptionResNetV2(input_shape=IMAGE_SIZE + [3], weights='imagenet', include_top=False)
 
 for layer in inception.layers:
     layer.trainable = False
 
-folders = glob('Datasets/Train/*')
+folders = glob('./Datasets/Train/*')
 x = Flatten()(inception.output)
 # x = Dense(1000, activation='relu')(x)
 prediction = Dense(len(folders), activation='softmax')(x)
@@ -47,12 +47,12 @@ train_datagen = ImageDataGenerator(rescale = 1./255,
 
 test_datagen = ImageDataGenerator(rescale = 1./255)
 
-training_set = train_datagen.flow_from_directory('Datasets/Train',
+training_set = train_datagen.flow_from_directory('./Datasets/Train',
                                                  target_size = (224, 224),
                                                  batch_size = 32,
                                                  class_mode = 'categorical')
 
-test_set = test_datagen.flow_from_directory('Datasets/Test',
+test_set = test_datagen.flow_from_directory('./Datasets/Test',
                                             target_size = (224, 224),
                                             batch_size = 32,
                                             class_mode = 'categorical')
