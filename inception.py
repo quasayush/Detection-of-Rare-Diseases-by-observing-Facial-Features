@@ -48,12 +48,12 @@ train_datagen = ImageDataGenerator(rescale = 1./255,
 test_datagen = ImageDataGenerator(rescale = 1./255)
 
 training_set = train_datagen.flow_from_directory('./Datasets/Train',
-                                                 target_size = (224, 224),
+                                                 target_size = (299, 299),
                                                  batch_size = 32,
                                                  class_mode = 'categorical')
 
 test_set = test_datagen.flow_from_directory('./Datasets/Test',
-                                            target_size = (224, 224),
+                                            target_size = (299, 299),
                                             batch_size = 32,
                                             class_mode = 'categorical')
 
