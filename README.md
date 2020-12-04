@@ -8,3 +8,6 @@ A softmax classiﬁer is used on each facial region to make separate prediction 
 
 The training data consists of almost 20-25 images of each disease and 150 images of face with no genetic condition. I customised the face recognition algorithm to output the boundary of the face identiﬁed in the picture and there are options for both GPU enabled and non-enabled devices. The original architecture has an accuracy of 99.38% on the Labeled Faces in the Wild benchmark.
 
+![alt text](https://github.com/quasayush/Detection-of-Rare-Diseases-by-observing-Facial-Features/blob/main/results/figure4.JPG)
+
+![alt text](https://github.com/quasayush/Detection-of-Rare-Diseases-by-observing-Facial-Features/blob/main/results/figure5.JPG)
